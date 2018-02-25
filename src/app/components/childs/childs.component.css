@@ -1,0 +1,17 @@
+.card-img-top {
+    width: 150px;
+    margin: 10px auto;
+    display: block;
+}
+
+td {
+    font-size: 14px;
+}
+
+.mto-30 {
+    margin-top: 30px;
+}
+
+.pull-right {
+    float: right;
+}

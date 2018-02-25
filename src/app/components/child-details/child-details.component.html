@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-6">
+        <a routerLink="/" class="btn btn-link">
+            <i class="fa fa-arrow-circle-o-left"></i> Ir al Dashboard
+        </a>
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group pull-right">
+            <a routerLink="/child/edit/{{ id }}" class="btn btn-dark">
+            Editar
+          </a>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="row" *ngIf="child">
+    <div class="col-md-9">
+        <h2>{{ child.nombre | titleCase}}</h2>
+    </div>
+    <div class="col-md-3 mto10">
+        <h4><small>Estado:</small> <i class="fa fa-circle mle5" [style.color]="child.estado ? color_icon : 'red'"></i></h4>
+    </div>
+</div>
+<hr>
+
+<div class="row" *ngIf="child">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img-top" src="./assets/images/user-icon.jpg" [alt]="child.nombre">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Nacionalidad: <strong>{{child.nacion}}</strong></td>
+                    <td>RH: <strong>{{child.rh}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Fecha de Nacimiento: <strong>{{child.born}}</strong></td>
+                    <td>Edad: <strong>{{child.edad}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Identificación: <strong>{{child.ident}}</strong></td>
+                    <td>Grado Escolar: <strong>{{child.escol}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Tutor/Responsable: <strong>{{child.tutor | titleCase}}</strong></td>
+                    <td>Teléfono: <strong>{{child.cel}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Dirección de residencia: <strong>{{child.dir}}</strong></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Observaciones: <strong>{{child.obs}}</strong></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Estudiante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                ¿Estas seguro que deseas eliminar este estudiante?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" (click)="onDeleteClick()" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

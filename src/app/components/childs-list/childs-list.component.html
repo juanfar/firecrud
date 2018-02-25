@@ -1,0 +1,36 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+            <h2><i class="fa fa-child fa-2x"></i> Nuestros Estudiantes</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="navbar navbar-light justify-content-between">
+        <a routerLink="/child/add" class="btn btn-success">
+            <i class="fa fa-plus"></i> Nuevo Estudiante
+        </a>
+        <form class="form-inline">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Buscar" />
+        </form>
+    </div>
+    <hr>
+    <div class="card-group">
+        <div class="col-sm-4 animated fadeIn" *ngFor="let child of childs | filter : searchText">
+            <div class="card mto-30">
+                <img class="card-img-top" src="./assets/images/user-icon.jpg" [alt]="child.nombre">
+                <div class="card-body">
+                    <h5 class="card-title">{{child.nombre | titleCase}}</h5>
+                    <hr>
+                    <div class="text-right">
+                        <a routerLink="/child/{{ child.id }}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noTasks>
+        <div class="alert alert-info" role="alert">
+            <strong>No hay</strong> registros guardados.
+        </div>
+    </ng-template>
+</div>
