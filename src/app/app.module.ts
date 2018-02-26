@@ -14,6 +14,7 @@ import { APP_ROUTING } from './app.route';
 
 // servicios
 import { ChService } from './services/ch.service';
+import { VolService } from './services/vol.service';
 import { AuthService } from './services/auth.service';
 import { SettingsService } from './services/settings.service';
 
@@ -33,6 +34,10 @@ import { EditChildComponent } from './components/childs/edit-child/edit-child.co
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TitleCasePipe } from './pipes/title-case.pipe';
+import { VolListComponent } from './components/voluntarios/vol-list/vol-list.component';
+import { AddVolComponent } from './components/voluntarios/add-vol/add-vol.component';
+import { VolDetailsComponent } from './components/voluntarios/vol-details/vol-details.component';
+import { EditVolComponent } from './components/voluntarios/edit-vol/edit-vol.component';
 
 
 @NgModule({
@@ -49,7 +54,11 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
     NotFoundComponent,
     ChildsListComponent,
     FilterPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    VolListComponent,
+    AddVolComponent,
+    VolDetailsComponent,
+    EditVolComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +71,7 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
   ],
   providers: [
     ChService,
+    VolService,
     AuthService,
     SettingsService
   ],

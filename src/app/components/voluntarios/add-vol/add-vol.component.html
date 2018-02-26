@@ -1,0 +1,101 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/vols" class="btn btn-link">
+                <i class="fa fa-arrow-circle-o-left"></i> Ir a Voluntarios
+            </a>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Agregar Voluntario
+        </div>
+        <div class="card-body">
+            <form #volForm="ngForm" (ngSubmit)="onSubmit(volForm)">
+                <h4>Información Personal</h4>
+                <br>
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input [(ngModel)]="vol.nombre" name="nombre" type="text" class="form-control" minlength="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Identificación</label>
+                    <input [(ngModel)]="vol.ident" name="ident" type="number" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nacionalidad</label>
+                    <select [(ngModel)]="vol.nacion" name="nacion" class="form-control">
+                      <option value="Colombia">Colombia</option>
+                      <option value="Venezuela">Venezuela</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Edad</label>
+                    <input [(ngModel)]="vol.edad" name="edad" type="number" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>RH</label>
+                    <input [(ngModel)]="vol.rh" name="rh" type="text" class="form-control" maxlength="2" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Dirección de Residencia</label>
+                    <input [(ngModel)]="vol.dir" name="dir" type="text" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input [(ngModel)]="vol.cel" name="cel" type="number" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Area</label>
+                    <input [(ngModel)]="vol.area" name="area" type="text" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select [(ngModel)]="vol.estado" name="estado" class="form-control">
+                      <option value = false>Inactivo</option>
+                      <option value = true>Activo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Jornada</label>
+                    <select [(ngModel)]="vol.jornada" name="jornada" class="form-control">
+                      <option value="Completa">Completa</option>
+                      <option value="Completa">Mañana</option>
+                      <option value="Parcial">Tarde</option>
+                    </select>
+                </div>
+
+
+                <hr>
+
+                <div class="form-group">
+                    <label>Observaciones</label>
+                    <textarea [(ngModel)]="vol.obs" name="obs" class="form-control">
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">
+                    Guardar Cambios
+                </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

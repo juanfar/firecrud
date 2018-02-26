@@ -1,3 +1,72 @@
-<p>
-  dashboard works!
-</p>
+<hr>
+<div class="row">
+    <div class="col-md-9 mto30">
+        <div class="media">
+            <h2><i class="fa fa-laptop fa-3x"></i></h2>
+            <h2 class="align-self-center mr-3">Dashboard</h2>
+        </div>
+    </div>
+    <div class="col-md-3 pull-right">
+        <img src="./assets/images/logo1.png" width="80%" alt="logo">
+    </div>
+</div>
+<hr>
+
+<div class="cont">
+
+    <div class="card-deck">
+
+        <div class="card mb-3" style="max-width: 18rem;">
+            <div class="card-body rojo">
+                <div class="row">
+                    <div class="col-md-5">
+                        <i class="fa fa-child"></i>
+                    </div>
+                    <div class="col-md-7" *ngIf="childs">
+                        <p class="cifra text-center">{{childs.length}}</p>
+                        <p class="texto text-center">Estudiantes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent t-rojo">
+                <a routerLink="/childs">Entrar</a>
+                <a routerLink="/childs"><i class="fa fa-arrow-circle-o-right pull-right"></i></a>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 18rem;">
+            <div class="card-body naranja">
+                <div class="row">
+                    <div class="col-md-5">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <div class="col-md-7" *ngIf="vols">
+                        <p class="cifra text-center">{{vols.length}}</p>
+                        <!--<p class="cifra text-center" *ngIf="vols == undefined">0</p>-->
+                        <p class="texto text-center">Voluntarios</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent t-naranja">
+                <a routerLink="/vols">Entrar</a>
+                <a routerLink="/vols"><i class="fa fa-arrow-circle-o-right pull-right"></i></a>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 18rem;">
+            <div class="card-body verde text-center">
+                <i class="fa fa-money"></i>
+                <br>
+                <p class="texto">Pagos</p>
+            </div>
+            <div class="card-footer bg-transparent t-verde">
+                <a routerLink="">Entrar</a>
+                <a routerLink=""><i class="fa fa-arrow-circle-o-right pull-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="creditos">
+    <hr>
+    <p class="text-right"><small class="text-right"><i class="fa fa-registered"></i> 2018 - Juan Manuel Fajardo Ramirez. Todos los derechos reservados</small></p>
+</div>

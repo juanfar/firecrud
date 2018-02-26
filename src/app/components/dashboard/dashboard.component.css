@@ -1,0 +1,72 @@
+.cont {
+    width: 85%;
+    margin: 5% auto;
+    display: block;
+}
+
+.verde {
+    background: #5cb85b;
+}
+
+.naranja {
+    background: #f0ad4e;
+}
+
+.rojo {
+    background: #d9534f;
+}
+
+.texto {
+    color: white;
+    margin: 0;
+}
+
+.cifra {
+    font-size: 48px;
+    color: white;
+    margin: 0;
+}
+
+.fa-child {
+    font-size: 120px;
+    color: white;
+}
+
+.fa-users {
+    font-size: 110px;
+    color: white;
+}
+
+.fa-money {
+    font-size: 120px;
+    color: white;
+}
+
+.t-rojo a {
+    color: #d9534f;
+}
+
+.t-naranja a {
+    color: #f0ad4e;
+}
+
+.t-verde a {
+    color: #5cb85b;
+}
+
+.fa-arrow-circle-o-right {
+    font-size: 24px;
+}
+
+.creditos,
+.creditos hr {
+    margin: 0;
+}
+
+.creditos small {
+    color: gray;
+}
+
+.mto30 {
+    margin-top: 30px;
+}

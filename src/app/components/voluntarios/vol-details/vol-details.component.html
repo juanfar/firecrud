@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-md-6">
-        <a routerLink="/childs" class="btn btn-link">
-            <i class="fa fa-arrow-circle-o-left"></i> Ir a Estudiantes
+        <a routerLink="/vols" class="btn btn-link">
+            <i class="fa fa-arrow-circle-o-left"></i> Ir a Voluntarios
         </a>
     </div>
     <div class="col-md-6">
         <div class="btn-group pull-right">
-            <a routerLink="/child/edit/{{ id }}" class="btn btn-dark">
+            <a routerLink="/vol/edit/{{ id }}" class="btn btn-dark">
             Editar
           </a>
             <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
@@ -15,21 +15,21 @@
 </div>
 <hr>
 
-<div class="row" *ngIf="child">
+<div class="row" *ngIf="vol">
     <div class="col-md-9">
-        <h2>{{ child.nombre | titleCase}}</h2>
+        <h2>{{ vol.nombre | titleCase}}</h2>
     </div>
     <div class="col-md-3 mto10">
-        <h4><small>Estado:</small> <i class="fa fa-circle mle5" [style.color]="child.estado ? color_icon : 'red'"></i></h4>
+        <h4><small>Estado:</small> <i class="fa fa-circle mle5" [style.color]="vol.estado ? color_icon : 'red'"></i></h4>
     </div>
 </div>
 <hr>
 
-<div class="row" *ngIf="child">
+<div class="row" *ngIf="vol">
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <img class="card-img-top" src="./assets/images/user-icon.jpg" [alt]="child.nombre">
+                <img class="card-img-top" src="./assets/images/user-icon.jpg" [alt]="vol.nombre">
             </div>
         </div>
     </div>
@@ -37,27 +37,23 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <td>Nacionalidad: <strong>{{child.nacion}}</strong></td>
-                    <td>RH: <strong>{{child.rh | titleCase}}</strong></td>
+                    <td>Nacionalidad: <strong>{{vol.nacion}}</strong></td>
+                    <td>RH: <strong>{{vol.rh | titleCase}}</strong></td>
                 </tr>
                 <tr>
-                    <td>Fecha de Nacimiento: <strong>{{child.born}}</strong></td>
-                    <td>Edad: <strong>{{child.edad}}</strong></td>
+                    <td>Identificación: <strong>{{vol.ident}}</strong></td>
+                    <td>Edad: <strong>{{vol.edad}}</strong></td>
                 </tr>
                 <tr>
-                    <td>Identificación: <strong>{{child.ident}}</strong></td>
-                    <td>Grado Escolar: <strong>{{child.escol}}</strong></td>
+                    <td>Dirección de residencia: <strong>{{vol.dir}}</strong></td>
+                    <td>Teléfono: <strong>{{vol.cel}}</strong></td>
                 </tr>
                 <tr>
-                    <td>Tutor/Responsable: <strong>{{child.tutor | titleCase}}</strong></td>
-                    <td>Teléfono: <strong>{{child.cel}}</strong></td>
+                    <td>Area: <strong>{{vol.area}}</strong></td>
+                    <td>Jornada: <strong>{{vol.jornada}}</strong></td>
                 </tr>
                 <tr>
-                    <td>Dirección de residencia: <strong>{{child.dir}}</strong></td>
-                    <td>Jornada: <strong>{{child.service}}</strong></td>
-                </tr>
-                <tr>
-                    <td>Observaciones: <strong>{{child.obs}}</strong></td>
+                    <td>Observaciones: <strong>{{vol.obs}}</strong></td>
                     <td></td>
                 </tr>
             </tbody>
@@ -66,19 +62,18 @@
 </div>
 <hr>
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Eliminar Estudiante</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Voluntario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
             </div>
             <div class="modal-body">
-                ¿Estas seguro que deseas eliminar este estudiante?
+                ¿Estas seguro que deseas eliminar este voluntario?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

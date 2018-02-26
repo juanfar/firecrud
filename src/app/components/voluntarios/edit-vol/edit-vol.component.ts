@@ -1,49 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { ChService } from '../../../services/ch.service';
+import { VolService } from '../../../services/vol.service';
 
-import { Child } from '../../../models/Child';
-
+import { Vol } from '../../../models/Vol';
 
 @Component({
-  selector: 'app-edit-child',
-  templateUrl: './edit-child.component.html',
-  styleUrls: ['./edit-child.component.css']
+  selector: 'app-edit-vol',
+  templateUrl: './edit-vol.component.html',
+  styleUrls: ['./edit-vol.component.css']
 })
-export class EditChildComponent implements OnInit {
+export class EditVolComponent implements OnInit {
   id: string;
 
-  child: Child = {
+  vol: Vol = {
     nombre: '',
     ident: null,
-    born: '',
     nacion: '',
     edad: null,
-    escol: null,
-    dir: '',
     rh: '',
-    estado: false,
-    service: '',
-    tutor: '',
+    dir: '',
     cel: null,
+    area: '',
+    jornada: '',
+    estado: false,
     obs: ''
   };
 
-  constructor(private _chService: ChService,
+  constructor(private _volService: VolService,
               private router: Router,
               private route: ActivatedRoute,
-              private flashMessages: FlashMessagesService
-              ) { }
+              private flashMessages: FlashMessagesService) { }
 
   ngOnInit() {
-    // Get id from url
+     // Get id from url
     this.id = this.route.snapshot.params['id'];
     // Get client
-    this._chService.getChild(this.id).subscribe(child => this.child = child);
+    this._volService.getVol(this.id).subscribe(vol => this.vol = vol);
   }
 
-  onSubmit({value, valid}: {value: Child, valid: boolean}) {
+  onSubmit({value, valid}: {value: Vol, valid: boolean}) {
     if (!valid) {
       this.flashMessages.show('Por favor llene el formulario de manera correcta', {
         cssClass: 'alert-danger animated fadeIn', timeout: 4000
@@ -52,11 +48,11 @@ export class EditChildComponent implements OnInit {
       // Add id to client
       value.id = this.id;
       // Update the client
-      this._chService.updateChild(value);
-      this.flashMessages.show('Estudiante Actualizado', {
+      this._volService.updateVol(value);
+      this.flashMessages.show('Voluntario Actualizado', {
         cssClass: 'alert-success animated fadeIn', timeout: 4000
       });
-      this.router.navigate(['/child/' + this.id]);
+      this.router.navigate(['/vol/' + this.id]);
     }
   }
 
