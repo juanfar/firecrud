@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { Child } from '../../models/Child';
-import { ChService } from '../../services/ch.service';
+import { Child } from '../../../models/Child';
+import { ChService } from '../../../services/ch.service';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class AddChildComponent implements OnInit {
     obs: ''
   };
 
-  @ViewChild('clientForm') form: any;
+  @ViewChild('childForm') form: any;
 
   constructor(private flashMessage: FlashMessagesService,
               private _chService: ChService,
@@ -52,7 +52,7 @@ export class AddChildComponent implements OnInit {
         cssClass: 'alert-success animated fadeIn', timeout: 4000
       });
       // Redirect to dash
-      this.router.navigate(['/']);
+      this.router.navigate(['/childs']);
     }
   }
 

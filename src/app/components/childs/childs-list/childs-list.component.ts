@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ChService } from '../../services/ch.service';
+import { ChService } from '../../../services/ch.service';
 
-import { Child } from '../../models/Child';
+import { Child } from '../../../models/Child';
 
 @Component({
   selector: 'app-childs-list',

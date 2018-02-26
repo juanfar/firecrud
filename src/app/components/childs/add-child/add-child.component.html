@@ -1,38 +1,42 @@
-<!--<app-navbar></app-navbar>-->
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/childs" class="btn btn-link">
+                <i class="fa fa-arrow-circle-o-left"></i> Ir a Estudiantes
+            </a>
+        </div>
+        <div class="col-md-6">
 
-<div class="container main-container">
-    <h3>Estudiante <small>{{child.nombre}}</small></h3>
-    <button routerLink="/" class="btn btn-outline-danger">
-    Regresar
-    </button>
-    <hr>
+        </div>
+    </div>
 
-    <div class="row animated fadeIn">
-        <div class="col-md-12">
-
-            <form (ngSubmit)="onSubmit()" #forma="ngForm">
-
+    <div class="card">
+        <div class="card-header">
+            Agregar Estudiante
+        </div>
+        <div class="card-body">
+            <form #childForm="ngForm" (ngSubmit)="onSubmit(childForm)">
                 <h4>Información Personal</h4>
                 <br>
 
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input [(ngModel)]="child.nombre" name="nombre" type="text" class="form-control" placeholder="" required>
+                    <input [(ngModel)]="child.nombre" name="nombre" type="text" class="form-control" minlength="2" required>
                 </div>
 
                 <div class="form-group">
                     <label>Identificación</label>
-                    <input [(ngModel)]="child.ident" name="ident" type="number" class="form-control" placeholder="" required>
+                    <input [(ngModel)]="child.ident" name="ident" type="number" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label>Fecha de Nacimiento</label>
-                    <input [(ngModel)]="child.born" name="born" type="date" class="form-control" placeholder="" required>
+                    <input [(ngModel)]="child.born" name="born" type="date" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label>Edad</label>
-                    <input [(ngModel)]="child.edad" name="edad" type="number" class="form-control" placeholder="" required>
+                    <input [(ngModel)]="child.edad" name="edad" type="number" class="form-control" required>
                 </div>
 
                 <div class="form-group">
@@ -92,7 +96,6 @@
                     </textarea>
                 </div>
 
-
                 <div class="form-group">
                     <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">
                     Guardar Cambios
@@ -100,7 +103,6 @@
                 </div>
 
             </form>
-
         </div>
     </div>
 </div>

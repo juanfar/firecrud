@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { ChService } from '../../services/ch.service';
+import { ChService } from '../../../services/ch.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
-import { Child } from '../../models/Child';
+import { Child } from '../../../models/Child';
 
 
 @Component({
@@ -37,7 +37,7 @@ export class ChildDetailsComponent implements OnInit {
       this.flashMessages.show('Estudiante eliminado', {
         cssClass: 'alert-success animated fadeIn', timeout: 4000
       });
-      this.router.navigate(['/']);
+      this.router.navigate(['/childs']);
   }
 
 }
